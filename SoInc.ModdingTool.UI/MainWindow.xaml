@@ -1,0 +1,66 @@
+﻿<local:BaseWindow x:Class="SoInc.ModdingTool.UI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SoInc.ModdingTool.UI"
+        xmlns:r="clr-namespace:SoInc.ModdingTool.UI.Properties"
+        xmlns:c="clr-namespace:SoInc.ModdingTool.UI.Controls"
+        mc:Ignorable="d"
+        Title="Software Inc - Modding Tool by Spartan - " Height="700" Width="1200" WindowStartupLocation="CenterScreen" FontSize="20" >
+    <Grid Margin="5">
+        <TabControl Name="tcMod">
+            <TabItem Header="{x:Static r:Resources.General}">
+                <c:General x:Name="ucGeneral"></c:General>
+            </TabItem>
+            <TabItem Header="{x:Static r:Resources.Companies}">
+                <c:CompaniesControl x:Name="ucCompanies"></c:CompaniesControl>
+            </TabItem>
+            <TabItem Header="{x:Static r:Resources.CompanyTypes}" IsEnabled="False">
+                <c:CompanyTypes x:Name="ucCompanyTypes"></c:CompanyTypes>
+            </TabItem>
+            <TabItem Header="{x:Static r:Resources.Events}" IsEnabled="False">
+                <c:Events x:Name="ucEvents"></c:Events>
+            </TabItem>
+            <TabItem Header="{x:Static r:Resources.Scenarios}" IsEnabled="False">
+                <c:Scenarios x:Name="ucScenarios"></c:Scenarios>
+            </TabItem>
+            <TabItem Header="{x:Static r:Resources.SoftwareTypes}">
+                <c:SoftwareTypes x:Name="ucSoftwareTypes"></c:SoftwareTypes>
+            </TabItem>
+            <TabItem Header="{x:Static r:Resources.Personalities}" IsEnabled="False">
+                <c:Personalities x:Name="ucPersonalities"></c:Personalities>
+            </TabItem>
+            <TabItem Header="{x:Static r:Resources.NameGenerator}" IsEnabled="False">
+                <c:NameGenerator x:Name="ucNameGenerator"></c:NameGenerator>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <Image Source="pack://siteoforigin:,,,/Resources/spartan_logo__256px.ico" Height="15"/>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Name="tbTitle" Margin="0,10,0,0" FontWeight="Bold" HorizontalAlignment="Center"/>
+                        <StackPanel VerticalAlignment="Center" Grid.Row="1">
+                            <TextBlock Text="(C) Copyright by Imperator145"/>
+                            <TextBlock></TextBlock>
+                            <TextBlock Text="Modding Tool for Software Inc from Coredumping"/>
+                            <TextBlock >
+                            <Hyperlink NavigateUri="https://coredumping.com/" RequestNavigate="Hyperlink_RequestNavigate">https://coredumping.com/</Hyperlink>
+                            </TextBlock>
+                            <TextBlock>
+                            <Hyperlink NavigateUri="https://swinc.net/" RequestNavigate="Hyperlink_RequestNavigate">https://swinc.net/</Hyperlink>
+                            </TextBlock>
+                            <TextBlock/>
+                        </StackPanel>
+                    </Grid>
+                </TabItem.Content>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</local:BaseWindow>

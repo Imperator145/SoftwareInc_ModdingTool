@@ -1,0 +1,25 @@
+﻿<local:BaseWindow x:Class="SoInc.ModdingTool.UI.EntryBox"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SoInc.ModdingTool.UI"
+        xmlns:r="clr-namespace:SoInc.ModdingTool.UI.Properties"
+        mc:Ignorable="d"
+        Title="EntryBox" Height="170px" Width="400px" ResizeMode="NoResize" FontSize="20" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Name="tbQuestion" Grid.Row="0" Grid.ColumnSpan="2" Margin="5"/>
+        <TextBox Name="tbEntry" Grid.Row="1" Grid.ColumnSpan="2" Margin="5"/>
+        <Button Name="btnOk" Content="{x:Static r:Resources.OK}" Grid.Row="2" Grid.Column="1" Margin="5" Click="btnOk_Click"/>
+        <Button Name="btnCancel" Content="{x:Static r:Resources.Cancel}" Grid.Row="2" Grid.Column="0" Margin="5" Click="btnCancel_Click"/>
+    </Grid>
+</local:BaseWindow>

@@ -1,0 +1,124 @@
+﻿<local:BaseUserControl xmlns:syncfusion="http://schemas.syncfusion.com/wpf"  x:Class="SoInc.ModdingTool.UI.Controls.SoftwareTypes"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SoInc.ModdingTool.UI.Controls"
+             xmlns:r="clr-namespace:SoInc.ModdingTool.UI.Properties"
+             xmlns:sf="clr-namespace:Syncfusion.Windows.Controls;assembly=Syncfusion.SfShared.Wpf"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="30"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="30"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="{x:Static r:Resources.Name}" Grid.Row="0" HorizontalAlignment="Right" Margin="0,0,10,0"/>
+            <TextBlock Text="{x:Static r:Resources.Description}" Grid.Row="1" HorizontalAlignment="Right" Margin="0,0,10,0"/>
+            <TextBlock Text="{x:Static r:Resources.Random}" Grid.Row="2" HorizontalAlignment="Right" Margin="0,0,10,0"/>
+            <TextBlock Text="{x:Static r:Resources.Popularity}" Grid.Row="3" HorizontalAlignment="Right" Margin="0,0,10,0"/>
+            <TextBlock Text="{x:Static r:Resources.OSSpecific}" Grid.Row="4" HorizontalAlignment="Right" Margin="0,0,10,0"/>
+            <TextBlock Text="{x:Static r:Resources.OneClient}" Grid.Row="5" HorizontalAlignment="Right" Margin="0,0,10,0"/>
+            <TextBlock Text="{x:Static r:Resources.InHouse}" Grid.Row="6" HorizontalAlignment="Right" Margin="0,0,10,0"/>
+            <TextBlock Text="{x:Static r:Resources.Category}" Grid.Row="7" HorizontalAlignment="Right" Margin="0,0,10,0"/>
+            <TextBlock Text="{x:Static r:Resources.OSLimit}" Grid.Row="8" HorizontalAlignment="Right" Margin="0,0,10,0"/>
+
+            <TextBox Name="tbName" Grid.Row="0" Grid.Column="1" MaxLength="100" TextChanged="Changed"/>
+            <TextBox Name="tbDescription" Grid.Row="1" Grid.Column="1" MaxLength="500" TextChanged="Changed"/>
+            <Slider Name="slRandom" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Maximum="100" Minimum="0" TickPlacement="BottomRight" TickFrequency="1" IsSnapToTickEnabled="True" ValueChanged="slRandom_ValueChanged" Margin="0,0,50,0"/>
+            <TextBlock Name="tbRandom" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Text="0%" HorizontalAlignment="Right" SizeChanged="Changed"/>
+            <syncfusion:SfRating Name="ratPopularity" ItemsCount="10" Precision="Exact" Value="5" Grid.Row="3" Grid.Column="1" SizeChanged="Changed"/>
+            <CheckBox Name="cbOSSpecific" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" Checked="Changed"/>
+            <CheckBox Name="cbOneClient" Grid.Row="5" Grid.Column="1" VerticalAlignment="Center" Checked="Changed"/>
+            <CheckBox Name="cbInHouse" Grid.Row="6" Grid.Column="1" VerticalAlignment="Center" Checked="Changed"/>
+            <TextBox Name="tbCategory" Grid.Row="7" Grid.Column="1" MaxLength="100" TextChanged="Changed"/>
+            <TextBox Name="tbOSLimit" Grid.Row="8" Grid.Column="1" MaxLength="100" TextChanged="Changed"/>
+
+            <Grid Grid.Row="9" Grid.ColumnSpan="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Name="btnSave" Content="{x:Static r:Resources.Save}" Click="btnSave_Click" Grid.Column="0" Margin="5"/>
+                <Button Name="btnDelete" Content="{x:Static r:Resources.Delete}" Click="btnDelete_Click" Grid.Column="1" Margin="5"/>
+                <Button Name="btnClear" Content="{x:Static r:Resources.Clear}" Click="btnClear_Click" Grid.Column="2" Margin="5"/>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="0" Grid.Column="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="{x:Static r:Resources.Categories}" Grid.Row="0" Grid.Column="0"/>
+            <TextBlock Text="{x:Static r:Resources.SoftwareTypes}" Grid.Row="0" Grid.Column="1"/>
+
+
+            <Grid Grid.Row="1" Grid.Column="0" Margin="0,10,0,10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <syncfusion:SfDataGrid Name="dgCategories" Grid.Row="0" Grid.ColumnSpan="3" AutoGenerateColumns="False">
+                    <syncfusion:SfDataGrid.Columns>
+                        <syncfusion:GridTextColumn HeaderText="{x:Static r:Resources.Name}" MappingName="Name"/>
+                        <syncfusion:GridTextColumn HeaderText="{x:Static r:Resources.Description}" MappingName="Description"/>
+                    </syncfusion:SfDataGrid.Columns>
+                </syncfusion:SfDataGrid>
+
+                <Button Name="btnAddCategory" Grid.Row="1" Grid.Column="0" Click="btnAddCategory_Click" Content="{x:Static r:Resources.Add}" Margin="5"/>
+                <Button Name="btnEditCategory" Grid.Row="1" Grid.Column="1" Click="btnEditCategory_Click" Content="{x:Static r:Resources.Edit}" Margin="5"/>
+                <Button Name="btnDeleteCategory" Grid.Row="1" Grid.Column="2" Click="btnDeleteCategory_Click" Content="{x:Static r:Resources.Delete}" Margin="5"/>
+
+            </Grid>
+
+            <syncfusion:SfDataGrid Name="dgTypes" Grid.Row="1" Grid.Column="1" SelectionChanged="dgTypes_SelectionChanged" Margin="10" AutoGenerateColumns="False">
+                <syncfusion:SfDataGrid.Columns>
+                    <syncfusion:GridTextColumn HeaderText="{x:Static r:Resources.Name}" MappingName="Name"/>
+                    <syncfusion:GridTextColumn HeaderText="{x:Static r:Resources.Description}" MappingName="Description"/>
+                </syncfusion:SfDataGrid.Columns>
+            </syncfusion:SfDataGrid>
+        </Grid>
+
+        <Rectangle Fill="CornflowerBlue" Grid.Row="1" Grid.ColumnSpan="5"/>
+        <TextBlock Text="{x:Static r:Resources.Features}" Grid.Row="1" Grid.ColumnSpan="5" HorizontalAlignment="Center"/>
+        <local:FeatureManager x:Name="ucFeatureManager" Grid.Row="3" Grid.ColumnSpan="5"/>
+    </Grid>
+</local:BaseUserControl>
