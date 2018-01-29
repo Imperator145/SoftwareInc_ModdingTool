@@ -117,7 +117,7 @@ namespace SoInc.ModdingTool.UI.Controls
             var entry = new EntryBox(Properties.Resources.EntryOS).Show();
             if (!string.IsNullOrEmpty(entry))
             {
-                Main.CompanyManager.Companies.Current.Products.Current.OS.Add(entry);
+                Main.CompanyManager.Companies.Current.Products.GetCurrent().OS.Add(entry);
                 this.Update();
             }
         }
@@ -131,7 +131,7 @@ namespace SoInc.ModdingTool.UI.Controls
         {
             if (lbOS.SelectedItem != null)
             {
-                Main.CompanyManager.Companies.Current.Products.Current.OS.Remove(lbOS.SelectedItem.ToString());
+                Main.CompanyManager.Companies.Current.Products.GetCurrent().OS.Remove(lbOS.SelectedItem.ToString());
                 this.Update();
             }
         }
@@ -146,7 +146,7 @@ namespace SoInc.ModdingTool.UI.Controls
             var entry = new EntryBox(Properties.Resources.EntryFeature).Show();
             if (!string.IsNullOrEmpty(entry))
             {
-                Main.CompanyManager.Companies.Current.Products.Current.Features.Add(entry);
+                Main.CompanyManager.Companies.Current.Products.GetCurrent().Features.Add(entry);
                 this.Update();
             }
         }
@@ -160,7 +160,7 @@ namespace SoInc.ModdingTool.UI.Controls
         {
             if (lbFeatures.SelectedItem != null)
             {
-                Main.CompanyManager.Companies.Current.Products.Current.Features.Remove(lbFeatures.SelectedItem.ToString());
+                Main.CompanyManager.Companies.Current.Products.GetCurrent().Features.Remove(lbFeatures.SelectedItem.ToString());
                 this.Update();
             }
         }
@@ -172,11 +172,7 @@ namespace SoInc.ModdingTool.UI.Controls
         /// <param name="e"></param>
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            Product p;
-            if (Main.CompanyManager.Companies.Current.Products.Current != null)
-                p = Main.CompanyManager.Companies.Current.Products.Current;
-            else p = new Product();
-
+            Product p = Main.CompanyManager.Companies.GetCurrent().Products.GetCurrent();
             p.Name = tbProductName.Text;
             p.ReleaseMonth = cbReleaseMonth.SelectedIndex + 1;
             p.ReleaseYear = Convert.ToInt32(tbReleaseYear.Value);
@@ -193,7 +189,7 @@ namespace SoInc.ModdingTool.UI.Controls
                 Main.CompanyManager.Companies.Current.Products.New(p);
 
             this.Saved = true;
-            this.Update();
+            this.Update(null);
         }
 
 

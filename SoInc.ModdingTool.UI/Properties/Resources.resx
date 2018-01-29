@@ -394,4 +394,22 @@ This Mod was created and designed with SoInc Modding Tool by Spartan
   <data name="EntryOS" xml:space="preserve">
     <value>Whats the Name of the OS?</value>
   </data>
+  <data name="Max" xml:space="preserve">
+    <value>Max</value>
+  </data>
+  <data name="Min" xml:space="preserve">
+    <value>Min</value>
+  </data>
+  <data name="PerYear" xml:space="preserve">
+    <value>Per Year</value>
+  </data>
+  <data name="Software" xml:space="preserve">
+    <value>Software</value>
+  </data>
+  <data name="Specialization" xml:space="preserve">
+    <value>Specialization</value>
+  </data>
+  <data name="Types" xml:space="preserve">
+    <value>Types</value>
+  </data>
 </root>

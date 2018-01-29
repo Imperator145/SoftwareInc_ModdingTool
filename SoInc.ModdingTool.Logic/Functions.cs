@@ -14,17 +14,6 @@ namespace SoInc.ModdingTool.Logic
     public static class Functions
     {
         /// <summary>
-        /// replaces all Windows-Explorer forbidden characters
-        /// </summary>
-        /// <param name="input"></param>
-        /// <returns></returns>
-        public static  string CreatePathFriendlyName(string input)
-        {
-            var regex = new Regex("[~#%&*{}/\\<>:;?+|\"]");
-            return regex.Replace(input, "-");
-        }
-
-        /// <summary>
         /// reads the Text from the path and replaces the text
         /// </summary>
         /// <param name="path"></param>
@@ -57,22 +46,9 @@ namespace SoInc.ModdingTool.Logic
         }
 
         /// <summary>
-        /// returns true if the Path exists
+        /// Returns the CUrrent Version
         /// </summary>
-        /// <param name="path"></param>
         /// <returns></returns>
-        public static bool CheckDirectoryOrFile(string path)
-        {
-            if(Regex.IsMatch(path, @"\.(\w|\d)+$"))
-            {
-                return File.Exists(path);
-            }
-            else
-            {
-                return Directory.Exists(path);
-            }
-        }
-
         public static string GetCurrentVersion()
         {
             return System.Reflection.Assembly.GetEntryAssembly().GetName().Version.ToString();

@@ -47,9 +47,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataManager\BaseManger.cs" />
     <Compile Include="DataManager\CompanyManager.cs" />
+    <Compile Include="DataManager\CompanyTypeManager.cs" />
     <Compile Include="Data\Category.cs" />
     <Compile Include="Data\Company.cs" />
+    <Compile Include="Data\CompanyType.cs" />
     <Compile Include="Data\Dependency.cs" />
     <Compile Include="Data\Error.cs" />
     <Compile Include="Data\Feature.cs" />

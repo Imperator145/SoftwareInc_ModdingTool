@@ -35,5 +35,8 @@ namespace SoInc.ModdingTool.Logic
             CheckPath(Path, true);
             File.AppendAllText(Path, String.Format("\r\n- {0} - {1}", error.Time, error.Exception.Message));
         }
+
+        public static void WriteError(Exception ex) => Current.WriteError(ex,"");
+
     }
 }

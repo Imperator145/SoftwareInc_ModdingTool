@@ -73,69 +73,61 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ReachFramework" />
-    <Reference Include="Syncfusion.Data.WPF, Version=15.4451.0.20, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+    <Reference Include="Syncfusion.Data.WPF, Version=15.4460.0.17, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Syncfusion.Data.WPF451.15.4.0.20\lib\net451\Syncfusion.Data.WPF.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>D:\Program Files (x86)\Syncfusion\15.4.0.17\Assemblies\4.6\Syncfusion.Data.WPF.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.Design.Wpf, Version=15.4451.0.20, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
-      <HintPath>..\packages\Syncfusion.Design.WPF451.15.4.0.20\lib\net451\Syncfusion.Design.Wpf.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.Diagram.Wpf, Version=15.4451.0.20, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+    <Reference Include="Syncfusion.Diagram.WPF, Version=15.4460.0.17, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Syncfusion.Diagram.WPF451.15.4.0.20\lib\net451\Syncfusion.Diagram.Wpf.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>D:\Program Files (x86)\Syncfusion\15.4.0.17\Assemblies\4.6\Syncfusion.Diagram.WPF.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.Grid.Wpf, Version=15.4451.0.20, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+    <Reference Include="Syncfusion.Grid.WPF, Version=15.4460.0.17, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Syncfusion.Grid.WPF451.15.4.0.20\lib\net451\Syncfusion.Grid.Wpf.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>D:\Program Files (x86)\Syncfusion\15.4.0.17\Assemblies\4.6\Syncfusion.Grid.WPF.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.GridCommon.Wpf, Version=15.4451.0.20, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+    <Reference Include="Syncfusion.GridCommon.WPF, Version=15.4460.0.17, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Syncfusion.GridCommon.WPF451.15.4.0.20\lib\net451\Syncfusion.GridCommon.Wpf.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>D:\Program Files (x86)\Syncfusion\15.4.0.17\Assemblies\4.6\Syncfusion.GridCommon.WPF.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.Linq.Base, Version=15.4451.0.20, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+    <Reference Include="Syncfusion.Linq.Base, Version=15.4460.0.17, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Syncfusion.Linq.Base451.15.4.0.20\lib\net451\Syncfusion.Linq.Base.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>D:\Program Files (x86)\Syncfusion\15.4.0.17\Assemblies\4.6\Syncfusion.Linq.Base.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.OlapGridCommon.WPF, Version=15.4451.0.20, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
-      <HintPath>..\packages\Syncfusion.OlapGridCommon.WPF451.15.4.0.20\lib\net451\Syncfusion.OlapGridCommon.WPF.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.PropertyGrid.Wpf, Version=15.4451.0.20, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
-      <HintPath>..\packages\Syncfusion.PropertyGrid.WPF451.15.4.0.20\lib\net451\Syncfusion.PropertyGrid.Wpf.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.SfDiagram.WPF, Version=15.4451.0.20, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+    <Reference Include="Syncfusion.OlapGridCommon.WPF, Version=15.4460.0.17, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Syncfusion.SfDiagram.WPF451.15.4.0.20\lib\net451\Syncfusion.SfDiagram.WPF.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>D:\Program Files (x86)\Syncfusion\15.4.0.17\Assemblies\4.6\Syncfusion.OlapGridCommon.WPF.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfGrid.WPF, Version=15.4451.0.20, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+    <Reference Include="Syncfusion.PropertyGrid.WPF, Version=15.4460.0.17, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Syncfusion.SfGrid.WPF451.15.4.0.20\lib\net451\Syncfusion.SfGrid.WPF.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>D:\Program Files (x86)\Syncfusion\15.4.0.17\Assemblies\4.6\Syncfusion.PropertyGrid.WPF.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfInput.Wpf, Version=15.4451.0.20, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+    <Reference Include="Syncfusion.SfDiagram.WPF, Version=15.4460.0.17, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Syncfusion.SfInput.WPF451.15.4.0.20\lib\net451\Syncfusion.SfInput.Wpf.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>D:\Program Files (x86)\Syncfusion\15.4.0.17\Assemblies\4.6\Syncfusion.SfDiagram.WPF.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfShared.Wpf, Version=15.4451.0.20, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+    <Reference Include="Syncfusion.SfGrid.WPF, Version=15.4460.0.17, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Syncfusion.SfShared.WPF451.15.4.0.20\lib\net451\Syncfusion.SfShared.Wpf.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>D:\Program Files (x86)\Syncfusion\15.4.0.17\Assemblies\4.6\Syncfusion.SfGrid.WPF.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.Shared.Wpf, Version=15.4451.0.20, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+    <Reference Include="Syncfusion.SfInput.WPF, Version=15.4460.0.17, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Syncfusion.Shared.WPF451.15.4.0.20\lib\net451\Syncfusion.Shared.Wpf.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>D:\Program Files (x86)\Syncfusion\15.4.0.17\Assemblies\4.6\Syncfusion.SfInput.WPF.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.Tools.Wpf, Version=15.4451.0.20, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+    <Reference Include="Syncfusion.SfShared.WPF, Version=15.4460.0.17, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Syncfusion.Tools.WPF451.15.4.0.20\lib\net451\Syncfusion.Tools.Wpf.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>D:\Program Files (x86)\Syncfusion\15.4.0.17\Assemblies\4.6\Syncfusion.SfShared.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Shared.Base, Version=15.4460.0.17, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Program Files (x86)\Syncfusion\15.4.0.17\Assemblies\4.6\Syncfusion.Shared.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Shared.WPF, Version=15.4460.0.17, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Program Files (x86)\Syncfusion\15.4.0.17\Assemblies\4.6\Syncfusion.Shared.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Tools.WPF, Version=15.4460.0.17, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Program Files (x86)\Syncfusion\15.4.0.17\Assemblies\4.6\Syncfusion.Tools.WPF.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -172,8 +164,8 @@
     <Compile Include="Controls\CompaniesControl.xaml.cs">
       <DependentUpon>CompaniesControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\CompanyTypes.xaml.cs">
-      <DependentUpon>CompanyTypes.xaml</DependentUpon>
+    <Compile Include="Controls\CompanyTypesControl.xaml.cs">
+      <DependentUpon>CompanyTypesControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\Events.xaml.cs">
       <DependentUpon>Events.xaml</DependentUpon>
@@ -216,7 +208,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\CompanyTypes.xaml">
+    <Page Include="Controls\CompanyTypesControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -295,13 +287,11 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="SoInc.ModdingTool.UI_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -338,6 +328,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -124,13 +124,7 @@ namespace SoInc.ModdingTool.UI.Controls
         /// </summary>
         public void SaveData()
         {
-            if (Main.SoftwareTypeManager.SoftwareTypes.Current == null)
-            {
-                Main.SoftwareTypeManager.SoftwareTypes.New();
-            }
-
-
-            var type = Main.SoftwareTypeManager.SoftwareTypes.Current;
+            var type = Main.SoftwareTypeManager.SoftwareTypes.GetCurrent();
             type.Name = tbName.Text;
             type.Description = tbDescription.Text;
             type.Random = slRandom.Value / 100;

@@ -13,7 +13,7 @@ namespace SoInc.ModdingTool.Logic.Data
     /// represents a advanced ObservableCollection of Generic Items
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class AdvancedList<T> : ObservableCollection<T> where T: class, new()
+    public class AdvancedList<T> : ObservableCollection<T> where T : class, new()
     {
         #region event
 
@@ -73,7 +73,7 @@ namespace SoInc.ModdingTool.Logic.Data
         /// <param name="newCurrent"></param>
         public void SetCurrent(T newCurrent)
         {
-            if (newCurrent != null &&  this.Contains(newCurrent))
+            if (newCurrent != null && this.Contains(newCurrent))
             {
                 Current = newCurrent;
             }
@@ -81,6 +81,19 @@ namespace SoInc.ModdingTool.Logic.Data
             {
                 Current = null;
             }
+        }
+
+        /// <summary>
+        /// Gets the Current item and creates a new one if its null
+        /// </summary>
+        public T GetCurrent()
+        {
+            if (Current == null)
+            {
+                return New();
+            }
+            else
+                return Current;
         }
 
         /// <summary>
@@ -110,11 +123,12 @@ namespace SoInc.ModdingTool.Logic.Data
         }
 
         /// <summary>
-        /// adds a new empty item an set it as Current
+        /// adds a new empty item, set it as Current and return the CUrrent-Item
         /// </summary>
-        public void New()
+        public T New()
         {
             this.New(new T());
+            return Current;
         }
     }
 }

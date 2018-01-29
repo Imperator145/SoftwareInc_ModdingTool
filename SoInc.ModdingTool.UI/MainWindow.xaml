@@ -17,7 +17,7 @@
                 <c:CompaniesControl x:Name="ucCompanies"></c:CompaniesControl>
             </TabItem>
             <TabItem Header="{x:Static r:Resources.CompanyTypes}" IsEnabled="False">
-                <c:CompanyTypes x:Name="ucCompanyTypes"></c:CompanyTypes>
+                <c:CompanyTypesControl x:Name="ucCompanyTypes"></c:CompanyTypesControl>
             </TabItem>
             <TabItem Header="{x:Static r:Resources.Events}" IsEnabled="False">
                 <c:Events x:Name="ucEvents"></c:Events>
@@ -48,6 +48,9 @@
                         <TextBlock Name="tbTitle" Margin="0,10,0,0" FontWeight="Bold" HorizontalAlignment="Center"/>
                         <StackPanel VerticalAlignment="Center" Grid.Row="1">
                             <TextBlock Text="(C) Copyright by Imperator145"/>
+                            <TextBlock/>
+                            <TextBlock/>
+                            <TextBlock/>
                             <TextBlock></TextBlock>
                             <TextBlock Text="Modding Tool for Software Inc from Coredumping"/>
                             <TextBlock >
@@ -57,6 +60,13 @@
                             <Hyperlink NavigateUri="https://swinc.net/" RequestNavigate="Hyperlink_RequestNavigate">https://swinc.net/</Hyperlink>
                             </TextBlock>
                             <TextBlock/>
+                            <TextBlock/>
+                            <TextBlock/>
+                            <TextBlock Text="Any Issue? Say it to me: " />
+                            <TextBlock>
+                                <Hyperlink NavigateUri="https://github.com/Imperator145/SoftwareInc_ModdingTool/issues" RequestNavigate="Hyperlink_RequestNavigate">https://github.com/Imperator145/SoftwareInc_ModdingTool/issues</Hyperlink>
+                            </TextBlock>
+
                         </StackPanel>
                     </Grid>
                 </TabItem.Content>

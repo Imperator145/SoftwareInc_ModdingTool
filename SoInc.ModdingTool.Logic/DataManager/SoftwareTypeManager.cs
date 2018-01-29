@@ -10,7 +10,7 @@ namespace SoInc.ModdingTool.Logic.DataManager
     /// <summary>
     /// Represents the Manager of the Software Types
     /// </summary>
-    public class SoftwareTypeManager
+    public class SoftwareTypeManager: BaseManger
     {
         /// <summary>
         /// Internal Field

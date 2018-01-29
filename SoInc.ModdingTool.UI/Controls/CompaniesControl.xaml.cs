@@ -100,13 +100,7 @@ namespace SoInc.ModdingTool.UI.Controls
         /// <param name="e"></param>
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            bool newItem = Main.CompanyManager.Companies.Current == null;
-
-            Company c = Main.CompanyManager.Companies.Current;
-            if (newItem)
-            {
-                c = new Company();
-            }
+            var c = Main.CompanyManager.Companies.GetCurrent();
 
             c.Name = tbName.Text;
             c.Money = Convert.ToInt32(tbMoney.Value);
@@ -115,7 +109,6 @@ namespace SoInc.ModdingTool.UI.Controls
             c.FoundedMonth = cbFoundedMonth.SelectedIndex + 1;
             c.BusinessReputation = Convert.ToInt32(tbReputation.Value);
             
-            if(newItem) Main.CompanyManager.Companies.New(c);
 
             this.Update();
         }

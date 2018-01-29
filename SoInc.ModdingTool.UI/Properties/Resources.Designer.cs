@@ -443,11 +443,29 @@ namespace SoInc.ModdingTool.UI.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Max ähnelt.
+        /// </summary>
+        public static string Max {
+            get {
+                return ResourceManager.GetString("Max", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die May ähnelt.
         /// </summary>
         public static string May {
             get {
                 return ResourceManager.GetString("May", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Min ähnelt.
+        /// </summary>
+        public static string Min {
+            get {
+                return ResourceManager.GetString("Min", resourceCulture);
             }
         }
         
@@ -650,6 +668,15 @@ namespace SoInc.ModdingTool.UI.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Per Year ähnelt.
+        /// </summary>
+        public static string PerYear {
+            get {
+                return ResourceManager.GetString("PerYear", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Popularity ähnelt.
         /// </summary>
         public static string Popularity {
@@ -758,6 +785,15 @@ namespace SoInc.ModdingTool.UI.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Software ähnelt.
+        /// </summary>
+        public static string Software {
+            get {
+                return ResourceManager.GetString("Software", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Software Types ähnelt.
         /// </summary>
         public static string SoftwareTypes {
@@ -781,6 +817,15 @@ namespace SoInc.ModdingTool.UI.Properties {
         public static string SoftwareTypesTitle {
             get {
                 return ResourceManager.GetString("SoftwareTypesTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Specialization ähnelt.
+        /// </summary>
+        public static string Specialization {
+            get {
+                return ResourceManager.GetString("Specialization", resourceCulture);
             }
         }
         
@@ -817,6 +862,15 @@ namespace SoInc.ModdingTool.UI.Properties {
         public static string Type {
             get {
                 return ResourceManager.GetString("Type", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Types ähnelt.
+        /// </summary>
+        public static string Types {
+            get {
+                return ResourceManager.GetString("Types", resourceCulture);
             }
         }
         

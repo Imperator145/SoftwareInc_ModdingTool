@@ -65,6 +65,24 @@ namespace SoInc.ModdingTool.Logic
             set { companyManager = value; }
         }
 
+        /// <summary>
+        /// internal FIeld
+        /// </summary>
+        private CompanyTypeManager companyTypeManager;
+
+        /// <summary>
+        /// Gets or Sets the CompanyTypeManger
+        /// </summary>
+        public CompanyTypeManager CompanyTypeManager
+        {
+            get
+            {
+                if (companyTypeManager == null)
+                    companyTypeManager = new CompanyTypeManager();
+                return companyTypeManager;
+            }
+            set { companyTypeManager = value; }
+        }
 
         /// <summary>
         /// Internal Field
@@ -140,10 +158,9 @@ namespace SoInc.ModdingTool.Logic
             //SoftwareTypes
             var path = Path.Combine(rootPath, "SoftwareTypes");
 
-            if (Functions.CheckDirectoryOrFile(path))
+            if (IOManager.CheckDirectoryOrFile(path))
             {
                 var files = Directory.GetFiles(path);
-
                 var xmlManager = new XmlManager<SoftwareType>();
                 foreach (var f in files)
                 {
@@ -154,15 +171,27 @@ namespace SoInc.ModdingTool.Logic
 
             //Companies
             path = Path.Combine(rootPath, "Companies");
-            if(Functions.CheckDirectoryOrFile(path))
+            if(IOManager.CheckDirectoryOrFile(path))
             {
                 var files = Directory.GetFiles(path);
-
                 var xmlManager = new XmlManager<Company>();
                 foreach (var f in files)
                 {
                     Company c = xmlManager.ReadFile(f);
                     CompanyManager.Companies.Add(c);
+                }
+            }
+
+            //CompanyTypes
+            path = Path.Combine(rootPath, "CompanyType");
+            if (IOManager.CheckDirectoryOrFile(path))
+            {
+                var files = Directory.GetFiles(path);
+                var xmlManager = new XmlManager<CompanyType>();
+                foreach (var f in files)
+                {
+                    CompanyType ct = xmlManager.ReadFile(f);
+                    companyTypeManager.CompanyTypes.Add(ct);
                 }
             }
 
@@ -182,19 +211,23 @@ namespace SoInc.ModdingTool.Logic
             //SoftwareTypes
             foreach (var st in SoftwareTypeManager.SoftwareTypes)
             {
-                path = Path.Combine(Mod.Path, "SoftwareTypes", Functions.CreatePathFriendlyName(st.Name)+".xml");
-                var xmlManager = new XmlManager<SoftwareType>();
-                xmlManager.WriteFile(path, st);
+                path = Path.Combine(Mod.Path, "SoftwareTypes", IOManager.CreatePathFriendlyName(st.Name)+".xml");
+                IOManager.WriteFileAsync(path, st);
             }
 
             //COmpanies
             foreach(var c in CompanyManager.Companies)
             {
-                path = Path.Combine(mod.Path, "Companies", Functions.CreatePathFriendlyName(c.Name) + ".xml");
-                var xmlManager = new XmlManager<Company>();
-                xmlManager.WriteFile(path, c);
+                path = Path.Combine(mod.Path, "Companies", IOManager.CreatePathFriendlyName(c.Name) + ".xml");
+                IOManager.WriteFileAsync(path, c);
             }
 
+            //CompanyTypes
+            foreach(var ct in CompanyTypeManager.CompanyTypes)
+            {
+                path = Path.Combine(mod.Path, "CompanyTypes", IOManager.CreatePathFriendlyName(ct.Specialization) + ".xml");
+                IOManager.WriteFileAsync(path, ct);
+            }
 
 
             //TODO: Write Other Components

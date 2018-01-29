@@ -10,7 +10,7 @@ namespace SoInc.ModdingTool.Logic.DataManager
     /// <summary>
     /// represents the Manager for the Companies
     /// </summary>
-    public class CompanyManager
+    public class CompanyManager : BaseManger
     {
         /// <summary>
         /// Internal Field

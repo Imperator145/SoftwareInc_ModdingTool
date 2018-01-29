@@ -32,7 +32,7 @@ namespace SoInc.ModdingTool.Logic
             }
             catch(System.Exception ex)
             {
-                ErrorManager.Current.WriteError(ex);
+                ErrorManager.WriteError(ex);
             }
 
             return null;
@@ -60,7 +60,7 @@ namespace SoInc.ModdingTool.Logic
                 }
                 catch (Exception ex)
                 {
-                    ErrorManager.Current.WriteError(ex);
+                    ErrorManager.WriteError(ex);
                 }
                 finally
                 {
