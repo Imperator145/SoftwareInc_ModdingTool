@@ -38,11 +38,10 @@ namespace SoInc.ModdingTool.Logic.Data
             }
             set
             {
-                var items = value.Split('_');
+                string[] items = value.Split('_');
                 if (items.Length >= 2)
                 {
-                    int output;
-                    ReleaseMonth = int.TryParse(items[0], out output) ? output : 0;
+                    ReleaseMonth = int.TryParse(items[0], out int output) ? output : 0;
                     ReleaseYear = int.TryParse(items[1], out output) ? output : 0;
                 }
                 else
@@ -71,8 +70,7 @@ namespace SoInc.ModdingTool.Logic.Data
             }
             set
             {
-                var output = false;
-                bool.TryParse(value, out output);
+                bool.TryParse(value, out bool output);
                 OpenSource = output;
             }
         }
@@ -89,8 +87,7 @@ namespace SoInc.ModdingTool.Logic.Data
             }
             set
             {
-                var output = false;
-                bool.TryParse(value, out output);
+                bool.TryParse(value, out bool output);
                 InHouse = output;
             }
         }

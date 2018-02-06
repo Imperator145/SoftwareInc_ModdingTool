@@ -7,8 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-//TODO: NeedUpdate bei verschiendensten Dingen in der Logik verwenden -> Listen
-
 namespace SoInc.ModdingTool.Logic
 {
     /// <summary>
@@ -36,15 +34,8 @@ namespace SoInc.ModdingTool.Logic
         /// </summary>
         public SoftwareTypeManager SoftwareTypeManager
         {
-            get
-            {
-                if (softwareTypeManager == null)
-                {
-                    softwareTypeManager = new SoftwareTypeManager();
-                }
-                return softwareTypeManager;
-            }
-            set { softwareTypeManager = value; }
+            get => softwareTypeManager = softwareTypeManager ?? new SoftwareTypeManager();
+            set => softwareTypeManager = value;
         }
 
         /// <summary>
@@ -57,12 +48,8 @@ namespace SoInc.ModdingTool.Logic
         /// </summary>
         public CompanyManager CompanyManager
         {
-            get {
-                if (companyManager == null)
-                    companyManager = new CompanyManager();
-                return companyManager;
-            }
-            set { companyManager = value; }
+            get => companyManager = companyManager ?? new CompanyManager();
+            set => companyManager = value;
         }
 
         /// <summary>
@@ -75,14 +62,52 @@ namespace SoInc.ModdingTool.Logic
         /// </summary>
         public CompanyTypeManager CompanyTypeManager
         {
-            get
-            {
-                if (companyTypeManager == null)
-                    companyTypeManager = new CompanyTypeManager();
-                return companyTypeManager;
-            }
-            set { companyTypeManager = value; }
+            get => companyTypeManager = companyTypeManager ?? new CompanyTypeManager();
+            set => companyTypeManager = value;
         }
+
+        /// <summary>
+        /// internal Field
+        /// </summary>
+        private EventManager eventManager;
+
+        /// <summary>
+        /// Gets or Sets the EventManager
+        /// </summary>
+        public EventManager EventManager
+        {
+            get => eventManager = eventManager ?? new EventManager();
+            set => eventManager = value;
+        }
+
+        /// <summary>
+        /// internal Field
+        /// </summary>
+        private ScenarioManager scenarioManager;
+
+        /// <summary>
+        /// Gets or Sets the ScenarioManager
+        /// </summary>
+        public ScenarioManager ScenarioManager
+        {
+            get => scenarioManager = scenarioManager ?? new ScenarioManager();
+            set => scenarioManager = value;
+        }
+
+        /// <summary>
+        /// internal field
+        /// </summary>
+        private PersonalityManager personalityManager;
+
+        /// <summary>
+        /// Gets or sets the PersonalityManager
+        /// </summary>
+        public PersonalityManager PersonalityManager
+        {
+            get => personalityManager = personalityManager ?? new PersonalityManager();
+            set => personalityManager = value;
+        }
+
 
         /// <summary>
         /// Internal Field
@@ -94,15 +119,8 @@ namespace SoInc.ModdingTool.Logic
         /// </summary>
         public Mod Mod
         {
-            get
-            {
-                if (mod == null)
-                {
-                    mod = new Mod();
-                }
-                return mod;
-            }
-            set { mod = value; }
+            get => mod = mod ?? new Mod();
+            set => mod = value;
         }
 
         /// <summary>
@@ -157,47 +175,27 @@ namespace SoInc.ModdingTool.Logic
 
             //SoftwareTypes
             var path = Path.Combine(rootPath, "SoftwareTypes");
-
-            if (IOManager.CheckDirectoryOrFile(path))
-            {
-                var files = Directory.GetFiles(path);
-                var xmlManager = new XmlManager<SoftwareType>();
-                foreach (var f in files)
-                {
-                    SoftwareType st = xmlManager.ReadFile(f);
-                    SoftwareTypeManager.SoftwareTypes.Add(st);
-                }
-            }
+            SoftwareTypeManager.SoftwareTypes.AddRange(IOManager.GetItems<SoftwareType>(path));
 
             //Companies
             path = Path.Combine(rootPath, "Companies");
-            if(IOManager.CheckDirectoryOrFile(path))
-            {
-                var files = Directory.GetFiles(path);
-                var xmlManager = new XmlManager<Company>();
-                foreach (var f in files)
-                {
-                    Company c = xmlManager.ReadFile(f);
-                    CompanyManager.Companies.Add(c);
-                }
-            }
+            CompanyManager.Companies.AddRange(IOManager.GetItems<Company>(path));
 
             //CompanyTypes
-            path = Path.Combine(rootPath, "CompanyType");
-            if (IOManager.CheckDirectoryOrFile(path))
-            {
-                var files = Directory.GetFiles(path);
-                var xmlManager = new XmlManager<CompanyType>();
-                foreach (var f in files)
-                {
-                    CompanyType ct = xmlManager.ReadFile(f);
-                    companyTypeManager.CompanyTypes.Add(ct);
-                }
-            }
+            path = Path.Combine(rootPath, "CompanyTypes");
+            CompanyTypeManager.CompanyTypes.AddRange(IOManager.GetItems<CompanyType>(path));
 
+            //Events
+            path = Path.Combine(rootPath, "Events");
+            EventManager.Events.AddRange(IOManager.GetItems<Event>(path));
 
-            //TODO: Read Other Components
+            //Scenarios
+            path = Path.Combine(rootPath, "Scenarios");
+            ScenarioManager.Scenarios.AddRange(IOManager.GetItems<Scenario>(path));
 
+            //Personalities
+            path = Path.Combine(rootPath, "Personalities.xml");
+            PersonalityManager.List.AddRange(IOManager.GetItem<PersonalityGraph>(path));
 
             OnNeedUpdate();
         }
@@ -211,39 +209,56 @@ namespace SoInc.ModdingTool.Logic
             //SoftwareTypes
             foreach (var st in SoftwareTypeManager.SoftwareTypes)
             {
-                path = Path.Combine(Mod.Path, "SoftwareTypes", IOManager.CreatePathFriendlyName(st.Name)+".xml");
+
+                path = Path.Combine(Mod.Path, "SoftwareTypes", IOManager.CreatePathFriendlyName(st.Name) + ".xml");
                 IOManager.WriteFileAsync(path, st);
             }
 
             //COmpanies
-            foreach(var c in CompanyManager.Companies)
+            foreach (var c in CompanyManager.Companies)
             {
                 path = Path.Combine(mod.Path, "Companies", IOManager.CreatePathFriendlyName(c.Name) + ".xml");
                 IOManager.WriteFileAsync(path, c);
             }
 
             //CompanyTypes
-            foreach(var ct in CompanyTypeManager.CompanyTypes)
+            foreach (var ct in CompanyTypeManager.CompanyTypes)
             {
                 path = Path.Combine(mod.Path, "CompanyTypes", IOManager.CreatePathFriendlyName(ct.Specialization) + ".xml");
                 IOManager.WriteFileAsync(path, ct);
             }
 
+            //Events
+            foreach (var e in EventManager.Events)
+            {
+                path = Path.Combine(mod.Path, "Events", IOManager.CreatePathFriendlyName(e.Name) + ".xml");
+                IOManager.WriteFileAsync(path, e);
+            }
 
-            //TODO: Write Other Components
+            //Scenarios
+            foreach (var s in ScenarioManager.Scenarios)
+            {
+                path = Path.Combine(mod.Path, "Scenarios", IOManager.CreatePathFriendlyName(s.Name) + ".xml");
+                IOManager.WriteFileAsync(path, s);
+            }
 
-
+            //Personalities
+            path = Path.Combine(mod.Path, "Personalities.xml");
+            IOManager.WriteFileAsync(path, PersonalityManager.List);
 
             //Info-File
-            path = Path.Combine(Mod.Path, "Info.txt");
-            if (!File.Exists(path)) File.Create(path).Close();
-            
+            path = Path.Combine(Mod.Path, "ReadMe.txt");
+            if (!File.Exists(path))
+                File.Create(path).Close();
 
-            var rep = new List<Tuple<string, string>>();
-            rep.Add(Tuple.Create("Year", DateTime.Now.Year.ToString()));
-            rep.Add(Tuple.Create("Date", DateTime.Now.ToString("dd.MM.yyyy")));
-            rep.Add(Tuple.Create("Creator", Mod.Creator));
-            rep.Add(Tuple.Create("Name", Mod.Name));
+
+            var rep = new List<Tuple<string, string>>
+            {
+                Tuple.Create("Year", DateTime.Now.Year.ToString()),
+                Tuple.Create("Date", DateTime.Now.ToString("dd.MM.yyyy")),
+                Tuple.Create("Creator", Mod.Creator),
+                Tuple.Create("Name", Mod.Name)
+            };
 
 
             var text = Functions.ReplaceTemplate(InfoTextTemplate, rep);

@@ -4,19 +4,20 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8E40827B-25FC-422D-9AD6-43B3CBF4E29F}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SoInc.ModdingTool.Logic</RootNamespace>
-    <AssemblyName>SoInc.ModdingTool.Logic</AssemblyName>
+    <ProjectGuid>{BAC26135-F78B-4BE9-A3EA-AEEFDA87FA3B}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>SoInc.ModdingTool.Test</RootNamespace>
+    <AssemblyName>SoInc.ModdingTool.Test</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <SccProjectName>SAK</SccProjectName>
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -26,6 +27,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -42,43 +44,30 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
-    <Reference Include="System.Xml.ReaderWriter, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Xml.ReaderWriter.4.3.0\lib\net46\System.Xml.ReaderWriter.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataManager\BaseManger.cs" />
-    <Compile Include="DataManager\CompanyManager.cs" />
-    <Compile Include="DataManager\CompanyTypeManager.cs" />
-    <Compile Include="DataManager\EventManager.cs" />
-    <Compile Include="DataManager\PersonalityManager.cs" />
-    <Compile Include="DataManager\ScenarioManager.cs" />
-    <Compile Include="Data\Category.cs" />
-    <Compile Include="Data\Company.cs" />
-    <Compile Include="Data\CompanyType.cs" />
-    <Compile Include="Data\Dependency.cs" />
-    <Compile Include="Data\Error.cs" />
-    <Compile Include="Data\Event.cs" />
-    <Compile Include="Data\Feature.cs" />
-    <Compile Include="Data\AdvancedList.cs" />
-    <Compile Include="Data\Goal.cs" />
-    <Compile Include="Data\Mod.cs" />
-    <Compile Include="Data\Personality.cs" />
-    <Compile Include="Data\Product.cs" />
-    <Compile Include="Data\Relation.cs" />
-    <Compile Include="Data\Scenario.cs" />
-    <Compile Include="Data\SoftwareType.cs" />
-    <Compile Include="Data\Type.cs" />
-    <Compile Include="ErrorManager.cs" />
-    <Compile Include="Functions.cs" />
-    <Compile Include="IOManager.cs" />
-    <Compile Include="MainManager.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="DataManager\SoftwareTypeManager.cs" />
-    <Compile Include="XmlManager.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SoInc.ModdingTool.Logic\SoInc.ModdingTool.Logic.csproj">
+      <Project>{8e40827b-25fc-422d-9ad6-43b3cbf4e29f}</Project>
+      <Name>SoInc.ModdingTool.Logic</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

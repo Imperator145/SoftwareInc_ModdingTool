@@ -31,18 +31,16 @@ namespace SoInc.ModdingTool.Logic.Data
 
 
         [XmlIgnore()]
-        private List<string> types;
-
-        [XmlArray(ElementName = "Types")
-            ,XmlArrayItem(ElementName = "Type")
-            ,XmlAttribute(AttributeName = "Software")] //TODO: Prüfen ob das funktioniert
-        public List<string> Types
+        private Types types;
+        
+        //TODO: XML Serialization
+        public Types Types
         {
             get
             {
                 if (types == null)
                 {
-                    types = new List<string>();
+                    types = new Types();
                 }
                 return types;
             }
@@ -51,7 +49,5 @@ namespace SoInc.ModdingTool.Logic.Data
                 types = value;
             }
         }
-
-
     }
 }

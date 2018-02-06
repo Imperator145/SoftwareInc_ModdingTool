@@ -108,7 +108,7 @@ namespace SoInc.ModdingTool.UI.Controls
             c.FoundedYear = Convert.ToInt32(tbFoundedYear.Value);
             c.FoundedMonth = cbFoundedMonth.SelectedIndex + 1;
             c.BusinessReputation = Convert.ToInt32(tbReputation.Value);
-            
+            Main.Update();
 
             this.Update();
         }

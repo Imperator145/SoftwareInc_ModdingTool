@@ -16,20 +16,20 @@
             <TabItem Header="{x:Static r:Resources.Companies}">
                 <c:CompaniesControl x:Name="ucCompanies"></c:CompaniesControl>
             </TabItem>
-            <TabItem Header="{x:Static r:Resources.CompanyTypes}" IsEnabled="False">
+            <TabItem Header="{x:Static r:Resources.CompanyTypes}">
                 <c:CompanyTypesControl x:Name="ucCompanyTypes"></c:CompanyTypesControl>
             </TabItem>
-            <TabItem Header="{x:Static r:Resources.Events}" IsEnabled="False">
+            <TabItem Header="{x:Static r:Resources.Events}">
                 <c:Events x:Name="ucEvents"></c:Events>
             </TabItem>
-            <TabItem Header="{x:Static r:Resources.Scenarios}" IsEnabled="False">
-                <c:Scenarios x:Name="ucScenarios"></c:Scenarios>
+            <TabItem Header="{x:Static r:Resources.Scenarios}">
+                <c:ScenariosControl x:Name="ucScenarios"></c:ScenariosControl>
             </TabItem>
             <TabItem Header="{x:Static r:Resources.SoftwareTypes}">
                 <c:SoftwareTypes x:Name="ucSoftwareTypes"></c:SoftwareTypes>
             </TabItem>
-            <TabItem Header="{x:Static r:Resources.Personalities}" IsEnabled="False">
-                <c:Personalities x:Name="ucPersonalities"></c:Personalities>
+            <TabItem Header="{x:Static r:Resources.Personalities}">
+                <c:PersonalitiesControl x:Name="ucPersonalities"></c:PersonalitiesControl>
             </TabItem>
             <TabItem Header="{x:Static r:Resources.NameGenerator}" IsEnabled="False">
                 <c:NameGenerator x:Name="ucNameGenerator"></c:NameGenerator>

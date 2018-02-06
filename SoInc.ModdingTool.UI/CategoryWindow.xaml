@@ -7,7 +7,7 @@
         xmlns:r="clr-namespace:SoInc.ModdingTool.UI.Properties"
         xmlns:sf="http://schemas.syncfusion.com/wpf"
         mc:Ignorable="d"
-        Title="CategoryWindow" Height="400" Width="500" FontSize="20">
+        Title="{x:Static r:Resources.Category}" Height="400" Width="500" FontSize="20">
     <Grid Margin="5">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto"/>

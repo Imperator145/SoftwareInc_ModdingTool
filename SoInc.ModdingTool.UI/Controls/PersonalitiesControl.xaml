@@ -1,0 +1,78 @@
+﻿<local:BaseUserControl x:Class="SoInc.ModdingTool.UI.Controls.PersonalitiesControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SoInc.ModdingTool.UI.Controls"
+             xmlns:r="clr-namespace:SoInc.ModdingTool.UI.Properties"
+             xmlns:sf="http://schemas.syncfusion.com/wpf"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="75"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="{x:Static r:Resources.Name}" HorizontalAlignment="Right" Margin="0,0,5,0"/>
+            <TextBlock Text="{x:Static r:Resources.Aptitude}" Grid.Row="1" HorizontalAlignment="Right" Margin="0,0,5,0"/>
+            <TextBlock Text="{x:Static r:Resources.Leadership}" Grid.Row="2" HorizontalAlignment="Right" Margin="0,0,5,0"/>
+            <TextBlock Text="{x:Static r:Resources.Diligence}" Grid.Row="3" HorizontalAlignment="Right" Margin="0,0,5,0"/>
+
+            <Rectangle Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" Fill="CornflowerBlue"/>
+            <TextBlock Text="{x:Static r:Resources.Relationships}" Grid.Row="4" Grid.ColumnSpan="3" HorizontalAlignment="Center"/>
+
+            <TextBox Name="tbName" Grid.Column="1" Grid.ColumnSpan="2"/>
+            <Slider Name="slAptitude" Minimum="-100" Maximum="100" TickFrequency="1" TickPlacement="Both" Value="0" IsSnapToTickEnabled="True" Grid.Row="1" Grid.Column="1" ValueChanged="slAptitude_ValueChanged"/>
+            <TextBlock Name="tbAptitude" Grid.Row="1" Grid.Column="2" Text="0%" />
+
+            <Slider Name="slLeadership" Minimum="-100" Maximum="100" TickFrequency="1" TickPlacement="Both" Value="0" IsSnapToTickEnabled="True" Grid.Row="2" Grid.Column="1" ValueChanged="slLeadership_ValueChanged"/>
+            <TextBlock Name="tbLeadership" Grid.Row="2" Grid.Column="2"  Text="0%"/>
+
+            <Slider Name="slDiligence" Minimum="-100" Maximum="100" TickFrequency="1" TickPlacement="Both" Value="0" IsSnapToTickEnabled="True" Grid.Row="3" Grid.Column="1" ValueChanged="slDiligence_ValueChanged"/>
+            <TextBlock Name="tbDiligence" Grid.Row="3" Grid.Column="2" Text="0%" />
+
+            <ListBox Name="lbRelationships" Grid.Row="5" Grid.ColumnSpan="2" Margin="5,5,0,5" DisplayMemberPath="Name"/>
+            <Grid Grid.Row="5" Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Button Name="btnRelationAdd" Content="{x:Static r:Resources.Add}" Click="btnRelationAdd_Click" Grid.Row="0" Margin="0,5,5,5"/>
+                <Button Name="btnRelationDelete" Content="{x:Static r:Resources.Delete}" Click="btnRelationDelete_Click" Grid.Row="1" Margin="0,0,5,5"/>
+            </Grid>
+
+            <Grid Grid.Row="6" Grid.ColumnSpan="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button Name="btnClear" Content="{x:Static r:Resources.Clear}" Grid.Column="0" Margin="5" Click="btnClear_Click" />
+                <Button Name="btnDelete" Content="{x:Static r:Resources.Delete}" Grid.Column="1" Margin="5" Click="btnDelete_Click"/>
+                <Button Name="btnSave" Content="{x:Static r:Resources.Save}" Grid.Column="2" Margin="5" Click="btnSave_Click"/>
+            </Grid>
+        </Grid>
+
+        <sf:SfDataGrid Name="dgPersonalities" AutoGenerateColumns="False" Grid.Column="1" SelectionChanged="dgPersonalities_SelectionChanged">
+            <sf:SfDataGrid.Columns>
+                <sf:GridTextColumn HeaderText="{x:Static r:Resources.Name}" MappingName="Name"/>
+            </sf:SfDataGrid.Columns>
+        </sf:SfDataGrid>
+    </Grid>
+</local:BaseUserControl>

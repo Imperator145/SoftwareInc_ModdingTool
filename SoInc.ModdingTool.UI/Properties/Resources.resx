@@ -412,4 +412,52 @@ This Mod was created and designed with SoInc Modding Tool by Spartan
   <data name="Types" xml:space="preserve">
     <value>Types</value>
   </data>
+  <data name="EntryType" xml:space="preserve">
+    <value>What's the name of the new Type?</value>
+  </data>
+  <data name="AddCompanies" xml:space="preserve">
+    <value>Please add Companies to show them in the List!</value>
+  </data>
+  <data name="Goals" xml:space="preserve">
+    <value>Goals</value>
+  </data>
+  <data name="Simulation" xml:space="preserve">
+    <value>Simulation</value>
+  </data>
+  <data name="Years" xml:space="preserve">
+    <value>Years</value>
+  </data>
+  <data name="MoneyEntry" xml:space="preserve">
+    <value>Please Enter a new Amount:</value>
+  </data>
+  <data name="YearEntry" xml:space="preserve">
+    <value>Please enter a new Year:</value>
+  </data>
+  <data name="MoneyEntryError" xml:space="preserve">
+    <value>The Entry is not a allowed Number (Integer)</value>
+  </data>
+  <data name="YearEntryError" xml:space="preserve">
+    <value>The Entry is not a allowed Year(1980 - 2025)</value>
+  </data>
+  <data name="Aptitude" xml:space="preserve">
+    <value>Aptitude</value>
+  </data>
+  <data name="Diligence" xml:space="preserve">
+    <value>Diligence</value>
+  </data>
+  <data name="Leadership" xml:space="preserve">
+    <value>Leadership</value>
+  </data>
+  <data name="Relation" xml:space="preserve">
+    <value>Relation</value>
+  </data>
+  <data name="Relationships" xml:space="preserve">
+    <value>Relationships</value>
+  </data>
+  <data name="NewRelation" xml:space="preserve">
+    <value>New Relation</value>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>Value</value>
+  </data>
 </root>

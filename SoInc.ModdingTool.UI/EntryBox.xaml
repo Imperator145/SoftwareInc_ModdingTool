@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:SoInc.ModdingTool.UI"
         xmlns:r="clr-namespace:SoInc.ModdingTool.UI.Properties"
         mc:Ignorable="d"
-        Title="EntryBox" Height="170px" Width="400px" ResizeMode="NoResize" FontSize="20" WindowStartupLocation="CenterScreen">
+        Title="!!!" Height="170px" Width="400px" ResizeMode="NoResize" FontSize="20" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>

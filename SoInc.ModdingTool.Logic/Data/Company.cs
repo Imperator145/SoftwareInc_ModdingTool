@@ -14,7 +14,19 @@ namespace SoInc.ModdingTool.Logic.Data
     /// </summary>
     public class Companies : AdvancedList<Company>
     {
-
+        /// <summary>
+        /// returns a List of strings with the COmpany Names
+        /// </summary>
+        /// <returns></returns>
+        public List<string> GetList()
+        {
+            List<string> res = new List<string>();
+            foreach(var i in this)
+            {
+                res.Add(i.Name);
+            }
+            return res;
+        }
     }
     
     /// <summary>

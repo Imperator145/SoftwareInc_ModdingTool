@@ -12,7 +12,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="55"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -31,13 +31,13 @@
         <TextBlock Text="{x:Static r:Resources.Max}" Grid.Row="3" Grid.Column="0"/>
 
         <TextBox Name="tbSpecialization" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2"/>
-        <Slider Name="slPerYear" Grid.Column="1" Grid.Row="1" ValueChanged="slPerYear_ValueChanged" Minimum="0" Maximum="100" TickFrequency="1" TickPlacement="Both"/>
+        <Slider Name="slPerYear" Grid.Column="1" Grid.Row="1" ValueChanged="slPerYear_ValueChanged" Minimum="0" Maximum="100" TickFrequency="1" IsSnapToTickEnabled="True" TickPlacement="Both"/>
         <TextBlock Name="tbPerYear" Grid.Column="2" Grid.Row="1" Text="0%" />
         <sf:IntegerTextBox Name="tbMin" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="2" MinValue="0"/>
         <sf:IntegerTextBox Name="tbMax" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="3" MinValue="0"/>
 
         <TextBlock Text="{x:Static r:Resources.Types}" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4"/>
-        <ListBox Name="lbTypes" Grid.Row="5" Grid.ColumnSpan="3" Margin="5"/>
+        <ListBox Name="lbTypes" Grid.Row="5" Grid.ColumnSpan="3" Margin="5" DisplayMemberPath="Text"/>
         <Grid Grid.Row="6" Grid.ColumnSpan="3">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"/>
@@ -59,5 +59,11 @@
             <Button Name="btnDelete" Content="{x:Static r:Resources.Delete}" Click="btnDelete_Click" Grid.Column="1" Margin="5"/>
             <Button Name="btnClear" Content="{x:Static r:Resources.Clear}" Click="btnClear_Click" Grid.Column="0" Margin="5"/>
         </Grid>
+        <sf:SfDataGrid Name="dgCompanyTypes" Grid.Column="3" Grid.RowSpan="8" SelectionChanged="dgCompanyTypes_SelectionChanged" AutoGenerateColumns="False">
+            <sf:SfDataGrid.Columns>
+                <sf:GridTextColumn MappingName="Specialization" />
+            </sf:SfDataGrid.Columns>
+        </sf:SfDataGrid>
+        
     </Grid>
 </local:BaseUserControl>

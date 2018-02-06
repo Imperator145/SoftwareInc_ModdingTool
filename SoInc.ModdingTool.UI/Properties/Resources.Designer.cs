@@ -70,11 +70,29 @@ namespace SoInc.ModdingTool.UI.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Please add Companies to show them in the List! ähnelt.
+        /// </summary>
+        public static string AddCompanies {
+            get {
+                return ResourceManager.GetString("AddCompanies", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die April ähnelt.
         /// </summary>
         public static string April {
             get {
                 return ResourceManager.GetString("April", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Aptitude ähnelt.
+        /// </summary>
+        public static string Aptitude {
+            get {
+                return ResourceManager.GetString("Aptitude", resourceCulture);
             }
         }
         
@@ -260,6 +278,15 @@ namespace SoInc.ModdingTool.UI.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Diligence ähnelt.
+        /// </summary>
+        public static string Diligence {
+            get {
+                return ResourceManager.GetString("Diligence", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Edit ähnelt.
         /// </summary>
         public static string Edit {
@@ -283,6 +310,15 @@ namespace SoInc.ModdingTool.UI.Properties {
         public static string EntryOS {
             get {
                 return ResourceManager.GetString("EntryOS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die What&apos;s the name of the new Type? ähnelt.
+        /// </summary>
+        public static string EntryType {
+            get {
+                return ResourceManager.GetString("EntryType", resourceCulture);
             }
         }
         
@@ -355,6 +391,15 @@ namespace SoInc.ModdingTool.UI.Properties {
         public static string GetOutputPathToolTip {
             get {
                 return ResourceManager.GetString("GetOutputPathToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Goals ähnelt.
+        /// </summary>
+        public static string Goals {
+            get {
+                return ResourceManager.GetString("Goals", resourceCulture);
             }
         }
         
@@ -434,6 +479,15 @@ namespace SoInc.ModdingTool.UI.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Leadership ähnelt.
+        /// </summary>
+        public static string Leadership {
+            get {
+                return ResourceManager.GetString("Leadership", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die March ähnelt.
         /// </summary>
         public static string March {
@@ -488,6 +542,24 @@ namespace SoInc.ModdingTool.UI.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Please Enter a new Amount: ähnelt.
+        /// </summary>
+        public static string MoneyEntry {
+            get {
+                return ResourceManager.GetString("MoneyEntry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die The Entry is not a allowed Number (Integer) ähnelt.
+        /// </summary>
+        public static string MoneyEntryError {
+            get {
+                return ResourceManager.GetString("MoneyEntryError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Month ähnelt.
         /// </summary>
         public static string Month {
@@ -520,6 +592,15 @@ namespace SoInc.ModdingTool.UI.Properties {
         public static string Needs {
             get {
                 return ResourceManager.GetString("Needs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die New Relation ähnelt.
+        /// </summary>
+        public static string NewRelation {
+            get {
+                return ResourceManager.GetString("NewRelation", resourceCulture);
             }
         }
         
@@ -722,6 +803,24 @@ namespace SoInc.ModdingTool.UI.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Relation ähnelt.
+        /// </summary>
+        public static string Relation {
+            get {
+                return ResourceManager.GetString("Relation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Relationships ähnelt.
+        /// </summary>
+        public static string Relationships {
+            get {
+                return ResourceManager.GetString("Relationships", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Release ähnelt.
         /// </summary>
         public static string Release {
@@ -781,6 +880,15 @@ namespace SoInc.ModdingTool.UI.Properties {
         public static string SequelTo {
             get {
                 return ResourceManager.GetString("SequelTo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Simulation ähnelt.
+        /// </summary>
+        public static string Simulation {
+            get {
+                return ResourceManager.GetString("Simulation", resourceCulture);
             }
         }
         
@@ -894,6 +1002,15 @@ namespace SoInc.ModdingTool.UI.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Value ähnelt.
+        /// </summary>
+        public static string Value {
+            get {
+                return ResourceManager.GetString("Value", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Vital ähnelt.
         /// </summary>
         public static string Vital {
@@ -917,6 +1034,33 @@ namespace SoInc.ModdingTool.UI.Properties {
         public static string Year {
             get {
                 return ResourceManager.GetString("Year", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Please enter a new Year: ähnelt.
+        /// </summary>
+        public static string YearEntry {
+            get {
+                return ResourceManager.GetString("YearEntry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die The Entry is not a allowed Year(1980 - 2025) ähnelt.
+        /// </summary>
+        public static string YearEntryError {
+            get {
+                return ResourceManager.GetString("YearEntryError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Years ähnelt.
+        /// </summary>
+        public static string Years {
+            get {
+                return ResourceManager.GetString("Years", resourceCulture);
             }
         }
     }

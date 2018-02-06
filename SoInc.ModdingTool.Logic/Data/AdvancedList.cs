@@ -16,11 +16,8 @@ namespace SoInc.ModdingTool.Logic.Data
     public class AdvancedList<T> : ObservableCollection<T> where T : class, new()
     {
         #region event
-
-        /// <summary>
-        /// Raises when any Property has changed
-        /// </summary>
-        public new event PropertyChangedEventHandler PropertyChanged;
+        public new event EventHandler PropertyChanged;
+        
 
         /// <summary>
         /// fires the event
@@ -73,7 +70,7 @@ namespace SoInc.ModdingTool.Logic.Data
         /// <param name="newCurrent"></param>
         public void SetCurrent(T newCurrent)
         {
-            if (newCurrent != null && this.Contains(newCurrent))
+            if (newCurrent != null && Contains(newCurrent))
             {
                 Current = newCurrent;
             }
@@ -109,8 +106,11 @@ namespace SoInc.ModdingTool.Logic.Data
         /// </summary>
         public void RemoveCurrent()
         {
-            this.Remove(current);
-            ClearCurrent();
+            if (current != null)
+            {
+                Remove(current);
+                ClearCurrent();
+            }
         }
 
         /// <summary>
@@ -118,7 +118,7 @@ namespace SoInc.ModdingTool.Logic.Data
         /// </summary>
         public void New(T newItem)
         {
-            this.Add(newItem);
+            Add(newItem);
             Current = newItem;
         }
 
@@ -127,8 +127,23 @@ namespace SoInc.ModdingTool.Logic.Data
         /// </summary>
         public T New()
         {
-            this.New(new T());
+            New(new T());
             return Current;
+        }
+
+        /// <summary>
+        /// Adds the whole array of items
+        /// </summary>
+        /// <param name="items"></param>
+        public void AddRange(IEnumerable<T> items)
+        {
+            if (items != null)
+            {
+                foreach (var i in items)
+                {
+                    Add(i);
+                }
+            }
         }
     }
 }

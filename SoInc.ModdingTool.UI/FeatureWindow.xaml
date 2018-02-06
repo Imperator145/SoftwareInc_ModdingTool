@@ -7,7 +7,7 @@
         xmlns:r="clr-namespace:SoInc.ModdingTool.UI.Properties"
         xmlns:sf="http://schemas.syncfusion.com/wpf"
         mc:Ignorable="d"
-        Title="Edit Feature" Height="500" Width="700" FontSize="20" WindowStartupLocation="CenterScreen">
+        Title="{x:Static r:Resources.Features}" Height="500" Width="700" FontSize="20" WindowStartupLocation="CenterScreen">
     <Grid Margin="20">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto"/>

@@ -78,7 +78,7 @@ namespace SoInc.ModdingTool.Logic
         /// <returns></returns>
         public static void WriteFileAsync<T>(string path, T data) where T:class, new()
         {
-             Task.Run(() => WriteFile<T>(path, data));
+            Task.Run(() => WriteFile<T>(path, data));
         }
 
         /// <summary>
@@ -98,6 +98,44 @@ namespace SoInc.ModdingTool.Logic
             {
                 ErrorManager.WriteError(ex);
             }
+        }
+
+        /// <summary>
+        /// Checks the Path if its exists and returns all Items in this folder
+        /// </summary>
+        /// <param name="path"></param>
+        /// <returns></returns>
+        public static List<T> GetItems<T>(string path) where T:class, new()
+        {
+            var res = new List<T>();
+            
+            if (CheckDirectoryOrFile(path))
+            {
+                var files = Directory.GetFiles(path);
+                var xmlManager = new XmlManager<T>();
+                foreach (var f in files)
+                {
+                    T item = xmlManager.ReadFile(f);
+                    res.Add(item);
+                }
+            }
+            return res;
+        }
+
+        /// <summary>
+        /// Checks the File if its exists and return the IEnumerable Item
+        /// </summary>
+        /// <param name="path"></param>
+        /// <returns></returns>
+        public static T GetItem<T>(string path) where T : class, IEnumerable, new()
+        {
+            var res = new T();
+            if (CheckDirectoryOrFile(path))
+            {
+                var xmlManager = new XmlManager<T>();
+                res = xmlManager.ReadFile(path);
+            }
+            return res;
         }
     }
 }
